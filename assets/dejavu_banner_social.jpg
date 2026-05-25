@@ -1,0 +1,73 @@
+import { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function useScrollReveal() {
+  useEffect(() => {
+    const revealEls = document.querySelectorAll('.reveal');
+    revealEls.forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      });
+    });
+
+    const revealLeft = document.querySelectorAll('.reveal-left');
+    revealLeft.forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      });
+    });
+
+    const revealRight = document.querySelectorAll('.reveal-right');
+    revealRight.forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      });
+    });
+
+    const revealScale = document.querySelectorAll('.reveal-scale');
+    revealScale.forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        scale: 1,
+        duration: 1.1,
+        ease: 'back.out(1.4)',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      });
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+}

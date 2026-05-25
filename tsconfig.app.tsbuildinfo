@@ -1,0 +1,1 @@
+{"root":["./src/AboutSection.tsx","./src/App.tsx","./src/ArtistsSection.tsx","./src/ContactSection.tsx","./src/CustomCursor.tsx","./src/Footer.tsx","./src/HeroSection.tsx","./src/Navigation.tsx","./src/ReleasesSection.tsx","./src/StatsSection.tsx","./src/main.tsx","./src/useMousePosition.ts","./src/useScrollReveal.ts","./src/vite-env.d.ts"],"version":"5.9.3"}
